@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+
+*{
+	margin:0;
+	padding:0;
+	}
+
+body{
+	font-family:"微软雅黑", "宋体";
+	background: #3CF;
+	color:#111;
+	}
+	
+#tabaodenglu{
+	width:300px;
+	background:#FFF;
+	padding:25px;
+	margin: 20px auto;
+	}
+	
+#tabaodenglu h3{
+	font-size:16px;
+	color:#3c3c3c; 
+	line-height:2em; 
+	margin-bottom:25px;
+	}
+	
+.zhanghao{
+	border:1px #999 solid; 
+	height:39px; width:248px; 
+	background:url(img/taobao2.png) no-repeat -1px 0; 
+	padding-left:50px; 
+	font-size:14px; 
+	font-family:"微软雅黑", "宋体";
+	margin-bottom:25px;
+	}
+	
+.pwd{
+	border:1px #999 solid; 
+	height:39px; 
+	width:248px; 
+	background:url(img/taobao1.png) no-repeat 0 0; 
+	padding-left:50px;
+	margin-bottom:25px;}
+
+.sbt{
+	display:block;
+	width:300px;
+	height:39px;
+	border:0;
+	background: #ff0504;
+	font-size:16px;
+	font-family:"微软雅黑", "宋体";
+	color:#FFF; font-weight:bold;
+	letter-spacing:5px;
+	border-radius:5px;
+	margin-bottom:25px;
+}
+
+.sbt:hover{
+	background:#F33;
+	cursor:pointer;
+}
+
+#tabaodenglu h6{ 
+text-align:right;
+}
+#tabaodenglu h6 a{ 
+	color:#666; 
+	text-decoration:none; 
+	font-weight:normal; 
+	margin-right:12px;
+	}
+	
+#tabaodenglu h6 a:hover{color:#F33;}
+</style>
+
+</head>
+
+<body>
+<form action="#" method="post" name="tabaodenglu" id="tabaodenglu">
+	<h3>密码登入</h3>
+    <p><input class="zhanghao" type="text" placeholder="会员名/邮箱/手机号" autofocus required></p>
+    <p><input class="pwd" type="password" required></p>
+    <p><input class="sbt" type="submit" value="登录"></p>
+    <h6>
+    <a href="#">忘记密码</a>
+    <a href="#">忘记会员名</a>
+    <a href="#">免费注册</a>
+    </h6>
+</form>
+
+</body>
+</html>

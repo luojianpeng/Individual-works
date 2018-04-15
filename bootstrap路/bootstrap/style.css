@@ -1,0 +1,134 @@
+*{margin:0;padding: 0}
+body{
+	background: #fff;
+	color:#000;
+}
+.ad{
+	background: url('../img/chicago_large-min4-e3c48a2230b34485fb66c8aeff049924508af97c88daaf5145b10a1e2485a6db.jpg') no-repeat;
+	background-size:cover;
+	padding:30px 0px 150px 0;
+	color:#fff;
+}
+.ad h3{
+	padding-top:20px;
+	padding-bottom: 10px;
+}
+.ad span{
+	width:70px;
+	height: 1px;
+	border-top:1px solid #fff;
+	display: inline-block;
+	padding-bottom: 10px;
+}
+.ad p{
+	line-height: 40px;
+	font-size:16px;
+	padding-bottom: 70px;
+}
+.ad a{
+	padding: 10px 60px;
+}
+.ad a:hover{
+	color:#fff;
+	background: #999;
+}
+
+.us{
+	color:#fff;
+	background:#32c5d2;
+	padding:20px 0;
+}
+
+.find{
+	padding: 50px 0;
+}
+.find span{
+	width:70px;
+	height: 1px;
+	border-top:1px solid #666;
+	display: inline-block;
+	padding-bottom: 10px;
+}
+.find h3{
+	padding-bottom: 30px;
+}
+.find p{
+	line-height: 30px;
+}
+.find p {
+	padding-bottom: 30px;
+}
+.find .find_a{
+	background: #32c5d2;
+	padding:12px 90px;
+	color:#fff;
+}
+.finds{
+	padding: 50px 0;
+	background: #eee;
+}
+.finds span{
+	width:70px;
+	height: 1px;
+	border-top:1px solid #666;
+	display: inline-block;
+	padding-bottom: 10px;
+}
+.finds h3{
+	padding-bottom: 30px;
+}
+.finds p{
+	line-height: 30px;
+}
+.finds p {
+	padding-bottom: 30px;
+}
+.finds .finds_a{
+	background: #32c5d2;
+	padding:12px 90px;
+	color:#fff;
+}
+
+
+@media only screen and (max-width: 992px){
+
+	.finds img{
+		padding-top:30px;
+	}
+	
+
+}
+
+.clients{
+	padding:50px 0;
+}
+
+.clients h2{
+	padding-bottom:30px;
+}
+.clients span{
+	width:70px;
+	height: 1px;
+	border-top:1px solid #666;
+	display: inline-block;
+	padding-bottom:30px;
+}
+
+.with{
+	padding:50px;
+	background: #eee;
+}
+.with a{
+	padding:12px 70px;
+	border:1px solid #32c5d2;
+	color:#32c5d2;
+}
+footer{
+	background:#000;
+	color:#fff;
+}
+
+
+
+
+

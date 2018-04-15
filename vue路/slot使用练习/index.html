@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+        #headerWrap{
+            width:100%;
+            height: 50px;
+            background-color: #F7F7F7;
+            position: relative;
+            text-align: center;
+        }
+        #headerWrap span{
+            line-height: 50px;
+        }
+        #headerWrap img{
+            width: 25px;
+            position: absolute;
+            top:12px;
+        }
+
+        .leftImg{
+            right: 60px;
+        }
+        .rightImg{
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+    <book-video txt='书影音'>
+        <img src="img/ic_actionbar_search_icon.png" slot="leftImg" class="leftImg">
+        <img src="img/ic_create_group_chat_blue.png" slot="rightImg" class="rightImg">
+    </book-video>
+
+    <book-video txt='123'>
+        <img src="img/ic_actionbar_search_icon.png" slot="leftImg" class="leftImg">
+        <img src="img/ic_create_group_chat_blue.png" slot="rightImg" class="rightImg">
+    </book-video>
+
+    <book-video txt='321'>
+        <img src="img/ic_actionbar_search_icon.png" slot="leftImg" class="leftImg">
+        <img src="img/ic_create_group_chat_blue.png" slot="rightImg" class="rightImg">
+    </book-video>
+</div>
+
+<template id="video">
+    <div id="headerWrap">
+        <span>{{txt}}</span>
+        <slot name="leftImg"></slot>
+        <slot name="rightImg"></slot>
+
+    </div>
+</template>
+<script src="../vue/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#box",
+        components:{
+            'bookVideo':{
+                template:'#video',
+                props:['txt']
+            }
+        }
+    })
+</script>
+</body>
+</html>

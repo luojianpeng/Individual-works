@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    /*
+    var par = [{age:5,name:'张三'},{age:3,name:'李四'},{age:15,name:'王五'},{age:1,name:'随便'}];
+    var sortPar = par.sort(function (a,b) {
+        return b.age - a.age;
+    })
+    console.log(sortPar);
+    */
+
+    var str1 = 'abcefd';
+    var str2 = 'dceabf';
+    function fn() {
+        var a = str1.split('').sort().join("");
+        var b = str2.split('').sort().join("");
+
+        console.log(a === b);
+        console.log(b);
+    }
+    fn();
+</script>
+</body>
+</html>

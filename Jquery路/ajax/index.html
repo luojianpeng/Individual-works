@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form></form>
+<button>提交</button>
+
+<script src="../jquery/jquery1.7.js"></script>
+
+<script>
+    $("button").click(function(){
+        $.post("https://im-charge.beta.101.com/api/configs",
+                {
+                    once:"1521103973805:869a8d07",
+                    mac:"8EKqi18n6HrVwMvEYU9IDLd6yh2IkPir3iET1P6i49w=",
+                    'sdp_app_id':'40254982-4b08-44cd-912b-e582bcc0272e'
+                },
+                function(data,status){
+                    alert("数据: \n" + data + "\n状态: " + status);
+                });
+    });
+
+</script>
+</body>
+</html>

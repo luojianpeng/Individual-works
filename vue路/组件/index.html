@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="box">
+        <test></test>
+        <test></test>
+        <test></test>
+        <test></test>
+    </div>
+    <div id="box2">
+        <testl></testl>
+        <testl></testl>
+        <testl></testl>
+    </div>
+
+    <template id="t">
+        <div>
+            <h1 @click="fn">{{gsm}}</h1>
+            <h2>{{msg}}</h2>
+        </div>
+    </template>
+
+    <template id="t2">
+        <div>
+            <h1 @click="fn2">{{gsm}}</h1>
+            <h2>{{msg}}</h2>
+        </div>
+    </template>
+
+<script src="../vue/vue.js"></script>
+<script>
+
+    Vue.component('test',{
+
+        template:'#t',
+        data:function(){
+            return{
+                msg:'组件',
+                gsm:'hello'
+            }
+        },
+        methods:{
+            fn:function(){
+                alert(11)
+            }
+        }
+    });
+//全局组件定义
+
+
+
+    var vm = new Vue({
+        el:"#box",
+        data:{
+
+        }
+    });
+
+
+    var vm2 = new Vue({
+        el:'#box2',
+        components:{
+           testl:{
+               template:'#t2',
+               data:function(){
+                   return{
+                       msg:'你好哇',
+                       gsm:'啦啦啦啦啦'
+                   }
+               },
+               methods:{
+                   fn2:function(){
+                       alert(222222)
+                   }
+               }
+           }
+        }
+    });
+    //局部组件定义
+    var vm3 = new Vue({
+
+        el:'#box',
+        data:{
+
+        }
+
+    })
+</script>
+</body>
+</html>

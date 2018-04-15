@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+        *{margin: 0;padding: 0}
+        #finish{
+            color: #3eceff;
+        }
+        ul{list-style: none}
+        input{
+            margin-right: 5px;
+        }
+        div{
+            width: 500px;
+            margin: 20px auto;
+            background: #ccc;
+            padding: 10px;
+        }
+        h3{
+            margin: 10px 0 10px;
+        }
+        .through{
+            color: #848477;
+            text-decoration: line-through;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box" v-cloak>
+    <h1>任务列表</h1>
+    <h3>任务总数:{{arr.length}} 还有：{{choose()}} 未完成【<span id="finish" @click="dlt()">完成</span>】</h3>
+    <ul>
+        <li v-for="(item,index) in arr" v-bind:class="{through: item.bol}">
+            <input type="checkbox" v-model="item.bol">
+            <span v-text="item.des" v-show="!item.edit" @click="edit(index)"></span>
+            <input type="text" v-model="item.des" v-show="item.edit" @blur="item.edit = false">
+        </li>
+    </ul>
+    <input type="text" v-model="msg"><button @click="add()">添加</button>
+</div>
+
+
+
+
+
+
+<script src="../vue/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#box",
+
+        data:{
+            arr:[
+                {des:"吃饭",bol:false,edit:false},
+                {des:"睡觉",bol:false,edit:false},
+                {des:"打豆豆",bol:false,edit:false},
+                {des:"coding",bol:false,edit:false}
+            ],
+
+         msg:""
+        },
+
+
+
+        methods:{
+
+            add:function(){
+                if (  this.msg == ""  ){
+                    return
+                }
+                this.arr.push({des:this.msg,bol:false});
+                this.msg = "";
+            },
+
+            choose:function(){
+
+                var num = 0;
+                this.arr.forEach(function(item){
+                            if(!item.bol){
+
+                             num++;
+                             }
+                        });
+                return num;
+            },
+
+            dlt:function(){
+
+                var brr = this.arr;
+                this.arr = [];
+
+                for (var i = 0; i<brr.length; i++){
+                    if ( !brr[i].bol ){
+                        this.arr.push(brr[i]);
+                    }
+                }
+
+            },
+
+            edit:function(index){
+
+                if ( this.arr[index].bol ){
+                    return
+                }
+                this.arr[index].edit = true;
+            }
+
+
+        }
+
+
+    })
+</script>
+</body>
+</html>

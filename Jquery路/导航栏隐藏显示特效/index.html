@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            margin:200px auto;
+        }
+        dl{
+            width: 50px;
+            height: 40px;
+            background-color: #33CCFF;
+            margin: 0 auto;
+            float: left;
+        }
+        dt{
+
+            text-align: center;
+            line-height: 40px;
+            background-color: #33CCFF;
+
+        }
+        dd{
+            text-align: center;
+            line-height: 40px;
+            display: none;
+            background-color: #33CCFF;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+    <dl>
+        <dt>111</dt>
+        <dd>123</dd>
+        <dd>123</dd>
+        <dd>123</dd>
+        <dd>123</dd>
+    </dl>
+
+    <dl>
+        <dt>222</dt>
+        <dd>123</dd>
+        <dd>123</dd>
+        <dd>123</dd>
+        <dd>123</dd>
+    </dl>
+
+    <dl>
+        <dt>333</dt>
+        <dd>123</dd>
+        <dd>123</dd>
+        <dd>123</dd>
+        <dd>123</dd>
+    </dl>
+
+    <dl>
+        <dt>444</dt>
+        <dd>123</dd>
+        <dd>123</dd>
+        <dd>123</dd>
+        <dd>123</dd>
+    </dl>
+
+    <dl>
+        <dt>555</dt>
+        <dd>123</dd>
+        <dd>123</dd>
+        <dd>123</dd>
+        <dd>123</dd>
+    </dl>
+
+    <dl>
+        <dt>666</dt>
+        <dd>123</dd>
+        <dd>123</dd>
+        <dd>123</dd>
+        <dd>123</dd>
+    </dl>
+
+</div>
+
+
+<script src="../jquery/jquery1.7.js"></script>
+<script>
+
+    $( function fn(){
+
+         $("dt").mousemove( function(){
+
+            $(this).nextAll().stop(false,true).slideDown(500);
+
+         }).mouseout(function(){
+
+           $(this).nextAll().stop(false,true).slideUp(500) ;
+
+
+         })
+
+    } )
+
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul{
+            list-style: none;
+            width: 1200px;
+            margin: 200px auto;
+            overflow: hidden;
+        }
+
+        ul li{
+            float: left;
+            width: 100px;
+        }
+
+        #first{
+            width: 538px;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li id="first"><img src="images/1.jpg" ></li>
+    <li><img src="images/2.jpg"></li>
+    <li><img src="images/3.jpg"></li>
+    <li><img src="images/4.jpg"></li>
+    <li><img src="images/5.jpg"></li>
+    <li><img src="images/6.jpg"></li>
+    <li><img src="images/7.jpg"></li>
+</ul>
+
+
+<script src="../jquery/jquery1.7.js"></script>
+<script>
+
+    $(function(){
+
+        $("ul li").mousemove(
+
+                function(){
+
+                    $(this).stop(true).animate({width:538},500).siblings().stop(true).animate({width:100},500)
+
+                }
+
+        )
+
+    })
+
+</script>
+</body>
+</html>

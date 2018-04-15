@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{margin: 0;padding: 0  }
+        #banner{
+            width: 1000px;
+            height: 600px;
+            overflow: hidden;
+            margin: 100px auto;
+            position: relative;
+        }
+        ul{
+            width: 5000px;
+            list-style: none;
+        }
+
+        ul li{
+            float: left;
+        }
+        #icon {
+            width: 1000px;
+            height: 50px;
+            position: absolute;
+            top: 275px;
+        }
+        #left{
+            position: absolute;
+            left: 10px;
+        }
+        #right{
+            position: absolute;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="banner">
+    <ul>
+
+        <li><img src="images/1.jpg"></li>
+        <li><img src="images/2.jpg"></li>
+        <li><img src="images/3.jpg"></li>
+        <li><img src="images/4.jpg"></li>
+        <li><img src="images/5.jpg"></li>
+
+    </ul>
+
+    <div id="icon">
+        <img src="images/1.gif" id="left">
+        <img src="images/2.gif" id="right">
+    </div>
+
+</div>
+
+<script src="../jquery/jquery1.7.js"></script>
+<script>
+
+
+
+    $(function(){
+
+        var liWidth=$("ul li").first().innerWidth();
+
+        $("#right").click(
+
+                function(){
+
+                    $("ul").stop(false,true).animate({"marginLeft":-liWidth},300,function(){
+
+                        $("ul li").first().appendTo($("ul"));
+                        $("ul").css("marginLeft",0);
+                    })
+                }
+
+        )
+
+        $("#left").click(
+
+                function(){
+                    $("ul").css("marginLeft",-liWidth);
+                    $("ul li").last().prependTo($("ul"));
+                    $("ul").stop(false,true).animate({"marginLeft":0},300);
+                }
+
+        )
+
+    })
+
+</script>
+</body>
+</html>

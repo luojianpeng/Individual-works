@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #container{
+            width: 500px;
+            height: 500px;
+            background-color: #C4D2E0;
+            margin: 100px auto;
+            padding: 10px;
+        }
+        .top{
+            width: 500px;
+            height: 110px;
+            background-color: #999999;
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .top p{
+            width: 470px;
+            height: 30px;
+            text-align: right;
+            font-size: 30px;
+            padding: 10px;
+            line-height: 30px;
+        }
+        .txt2{
+            width: 500px;
+            position: absolute;
+            top: 55px;
+        }
+
+        .bottom{
+            height: 390px;
+            background-color: #C4D2E0;
+        }
+
+        .left{
+            float: left;
+            width: 350px;
+            height: 390px;
+        }
+        .left input{
+            width: 90px;
+            height: 80px;
+            margin: 8px;
+        }
+        .right{
+            float: right;
+            width: 150px;
+            height: 390px;
+        }
+        .right input{
+            float: right;
+            width: 100px;
+            height: 60px;
+            margin: 8px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+
+    <div class="top">
+
+        <p class="txt1"></p>
+        <p class="txt2">0</p>
+
+    </div>
+    <div class="bottom">
+
+        <div class="left">
+
+            <input type="button" value="7">
+            <input type="button" value="8">
+            <input type="button" value="9">
+
+            <input type="button" value="4">
+            <input type="button" value="5">
+            <input type="button" value="6">
+
+            <input type="button" value="1">
+            <input type="button" value="2">
+            <input type="button" value="3">
+
+            <input type="button" value="C" id="ZERO">
+            <input type="button" value="0">
+            <input type="button" value=".">
+        </div>
+
+        <div class="right">
+            <input type="button" value="+">
+            <input type="button" value="-">
+            <input type="button" value="*">
+            <input type="button" value="/">
+            <input type="button" value="=">
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../jquery/jquery1.7.js"></script>
+<script>
+    $(function(){
+
+        //var txt = "";
+
+        $(".left input:not(#ZERO)").click(function(){
+
+            //txt+= $(this).val();
+            //$(".txt2").text( txt  );
+
+
+            if( $(".txt2").text().indexOf(".") != -1 ){
+                //txt2.text()中， 已经有点了。
+
+                if( $(this).val() !="."){
+
+                    $(".txt2").append(  $(this).val()  );
+
+                }
+
+            }else if( $(".txt2").text() ==="0" ){
+
+
+                if( $(this).val() ==="." ){
+                    $(".txt2").append(  $(this).val()  );
+                }else{
+                    $(".txt2").text(  $(this).val()  )
+                }
+
+            }else{
+
+                $(".txt2").append(  $(this).val()  );
+
+            }
+
+        })
+
+
+
+
+
+
+        $(".right input:not(:last)").click(function(){
+
+
+            $(".txt1").text( $(".txt2").text()+$(this).val()   );
+
+            $(".txt2").text("");
+
+        })
+
+        $(".right input").last().click(function(){
+
+
+            var t1 = $(".txt1").text();
+            var t2 = $(".txt2").text();
+            var str = t1[t1.length-1];
+
+            $(".txt2").text(   count[str](t1,t2)     );
+            $(".txt1").text("");
+
+        })
+
+
+        var count = {
+
+            "+":function(a,b){
+
+                return parseFloat(a)+parseFloat(b);
+            },
+            "-":function(a,b){
+
+                return parseFloat(a)-parseFloat(b);
+            },
+            "*":function(a,b){
+
+                return parseFloat(a)*parseFloat(b);
+            },
+            "/":function(a,b){
+
+                return parseFloat(a)/parseFloat(b);
+            }
+
+        }
+
+
+        $("#ZERO").click(function(){
+            $(".txt2").text("");
+            $(".txt1").text("");
+        })
+
+    })
+</script>
+</body>
+</html>

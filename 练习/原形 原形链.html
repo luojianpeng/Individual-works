@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function Cat() {
+        this.name = 'lisi'
+    }
+    Cat.prototype = {
+        sex : 'man'
+    };
+    var cat1 = new Cat();
+    var cat2 = new Cat();
+    console.log(cat1.name);
+    console.log(cat2.name);
+    console.log(cat1.sex);
+    console.log(cat2.sex);
+
+</script>
+</body>
+</html>

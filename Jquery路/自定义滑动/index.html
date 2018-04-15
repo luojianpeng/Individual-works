@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #big{
+            width: 1000px;
+            height: 50px;
+            background-color: #46d5ff;
+            margin: 0 auto;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+        #small{
+            width: 50px;
+            height: 50px;
+            background-color: #e7ff31;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #article2{
+            width: 500px;
+            position: absolute;
+            top:0;
+        }
+        #article{
+            width: 500px;
+            height: 500px;
+            overflow: scroll;
+            position: relative;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="big">
+        <div id="small"></div>
+    </div>
+
+
+    <div id="article">
+        <div id="article2">
+            1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>
+            1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>
+            1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>
+            1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>
+            1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>
+            1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>
+            1111111111<br>
+            2222222222<br>
+            333333333333<br>
+            444444444444<br>
+            555555555<br>
+        </div>
+
+
+    </div>
+
+
+<script src="../jquery/jquery1.7.js"></script>
+<script>
+    $(function(){
+
+        $("#small").mousedown(function(e){
+
+            var _width = e.pageX;
+
+            $("#small").bind("mousemove",function(e){
+
+               var moveW = e.pageX - _width;
+
+               var  t = moveW;
+                if(moveW<0){
+                    moveW=0;
+            }else if( moveW > 950){
+                    moveW=950
+                }
+                var  t = moveW;
+                $("#small").css("left",t) ;
+
+
+                var x = t/950;
+
+                var T = x*1285/*( $("#article2").height()-$("#article").height() )*/;
+
+                $("#article2").css("top",-T);
+                console.log( $("#article2").height()-$("#article").height());
+            })
+
+        }).mouseup(function(){
+
+            $("#small").unbind("mousemove");
+
+        })
+    })
+</script>
+</body>
+</html>

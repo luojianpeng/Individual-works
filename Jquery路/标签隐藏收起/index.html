@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul li{
+            float: left;
+            margin: 0 10px;
+            padding: 20px;
+            list-style: none;
+            background-color: #a8a89b;
+        }
+    </style>
+</head>
+<body>
+
+
+<ul>
+
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>其他数字</li>
+
+</ul>
+    <button>更多</button>
+<script src = "../jquery/jquery1.7.js"></script>
+<script>
+    $(function fn(){
+
+        $("ul li:gt(2):not(:last)").css("display","none");
+
+        $("button").click(function(){
+
+           // $("ul li:gt(2):not(:last)").css("background","red");
+            var str = $("ul li:gt(2):not(:last)");
+            if (    str.is(":visible")  ){
+
+                str.hide(1000);
+                $("button").text("更多");
+
+            }else {
+
+                str.show(1000);
+                $("button").text("收起");
+
+            }
+
+        })
+
+    })
+</script>
+</body>
+</html>

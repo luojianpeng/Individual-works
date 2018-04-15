@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="slider1">
+
+    <ul>
+        <li><img src='images/1.jpg'></li>
+        <li><img src='images/2.jpg'></li>
+        <li><img src='images/3.jpg'></li>
+        <li><img src='images/4.jpg'></li>
+    </ul>
+
+</div>
+
+
+<div id="slider2">
+
+    <ul>
+        <li><img src='images/1.jpg'></li>
+        <li><img src='images/2.jpg'></li>
+        <li><img src='images/3.jpg'></li>
+        <li><img src='images/4.jpg'></li>
+    </ul>
+
+</div>
+
+
+
+
+<div id="slider3">
+
+    <ul>
+        <li><img src='images/1.jpg'></li>
+        <li><img src='images/2.jpg'></li>
+        <li><img src='images/3.jpg'></li>
+        <li><img src='images/4.jpg'></li>
+    </ul>
+
+</div>
+
+
+
+
+<script src="../jquery/jquery1.7.js"></script>
+<script src="js/banner.js"></script>
+<script>
+    $(function(){
+
+        $("#slider1").slider({
+
+        });
+
+        $("#slider2").slider({
+            numControl:true,
+            speed:500
+        });
+
+        $("#slider3").slider({
+            arrowControl:true,
+            numControl:true
+        });
+
+    })
+
+</script>
+</body>
+</html>

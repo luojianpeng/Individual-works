@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            background-color: #46d5ff;
+            width: 700px;
+            height: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        #box span{
+            background: url("img/star.png");
+            width: 16px;
+            height: 21px;
+            position: absolute;
+            left:0px;
+            top:0px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+
+</div>
+
+
+<script src="../jquery/jquery1.7.js"></script>
+<script>
+
+
+   $(function time(){
+
+               var len = 50;
+
+               for (    var i=0; i<len; i++   ){
+                   var x = Math.random() * 700+"px";
+                   var y = Math.random() * 600+"px";
+                   $("#box").append("<span style='left:"+x+";top:"+y+"'></span>")
+                   hide()
+               }
+
+               function hide(){
+
+                   $("#box span").animate({opacity:0},50,function(){
+
+                       show();
+                   })
+
+                   function show(){
+
+                       $("#box span").animate({opacity:1},10,function(){
+                           hide();
+                       })
+
+                   }
+               }
+           }
+   )
+
+
+</script>
+</body>
+</html>

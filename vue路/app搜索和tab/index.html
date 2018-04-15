@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0}
+        #search-box{
+            height: 50px;
+            background-color: #90ee90;
+            position: relative;
+        }
+        #search-box input{
+            width: 85%;
+            height: 30px;
+            text-indent: 2em;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            border:none;
+            border-radius: 5px;
+        }
+        #search-box img{
+            height: 20px;
+            width: 20px;
+            position: absolute;
+
+        }
+        .search-gray{
+            top: 15px;
+            left: 15px;
+        }
+        .scan-gray{
+            top: 15px;
+            right: 55px;
+        }
+        .chat-white{
+            top: 15px;
+            right: 10px;
+        }
+
+        #tabbar{
+            width: 100%;
+            height: 50px;
+            border-top: 1px solid #999999;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            background-color: #F7F7F7;
+        }
+        .icon{
+            width: 20%;
+            height: 50px;
+            float: left;
+        }
+        .icon img{
+            width: 38px;
+        }
+        .icon span{
+            width: 100%;
+            bottom: 10px;
+            left: 10px;
+            font-size: 0.8em;
+            display: block;
+            margin-top: -8px;
+            color: #7c7c7c;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+    <search></search>
+</div>
+
+<div id="box2">
+    <tab></tab>
+</div>
+
+
+
+
+
+
+<template id="search">
+    <div id="search-box">
+        <input type="text" :placeholder="msg"/>
+        <img src="img/ic_search_gray.png" class="search-gray">
+        <img src="img/ic_scan_gray.png" class="scan-gray">
+        <img src="img/ic_chat_white.png" class="chat-white">
+    </div>
+</template>
+
+<template id="tab">
+    <div id="tabbar">
+
+        <!--<item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>-->
+        <div class="icon">
+            <img src="img/ic_tab_home_active.png" alt="">
+            <span>首页</span>
+        </div>
+
+        <div class="icon">
+            <img src="img/ic_tab_subject_active.png" alt="">
+            <span>书影音</span>
+        </div>
+
+        <div class="icon">
+            <img src="img/ic_tab_status_active.png" alt="">
+            <span>广播</span>
+        </div>
+
+        <div class="icon">
+            <img src="img/ic_tab_group_active.png" alt="">
+            <span>小组</span>
+        </div>
+
+        <div class="icon">
+            <img src="img/ic_tab_profile_female_active.png" alt="">
+            <span>我的</span>
+        </div>
+
+
+
+
+
+    </div>
+</template>
+
+<!--<template id="item">
+    <div class="icon">
+        <img src="img/ic_tab_home_active.png" alt="">
+        <span>首页</span>
+    </div>
+</template>-->
+
+<script src="../vue/vue.js"></script>
+<script>
+
+   var vm = new Vue({
+        el:'#box',
+        components:{
+            'search':{
+
+                template:'#search',
+
+                data: function () {
+
+                    return {
+                        msg: '请输入搜索的内容'
+                    }
+                }
+            }
+        }
+    });
+
+    var vm1 = new Vue({
+        el : '#box2',
+        components:{
+            'tab':{
+                template:'#tab'
+                /*components:{
+                    'item':{
+                        template:'#item'
+                    }
+                }*/
+            }
+        }
+    })
+</script>
+</body>
+</html>

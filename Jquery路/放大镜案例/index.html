@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/css.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="main">
+    <div id="small">
+        <div><img src="images/1.jpg"></div>
+        <b></b>
+    </div>
+
+    <div id="big"><img src="images/1.jpg"></div>
+
+
+</div>
+
+<div id="nav">
+    <div id="left"><img src="images/left.gif"></div>
+
+    <ul>
+        <li><img src="images/1.jpg"  class="border"></li>
+        <li><img src="images/2.jpg"></li>
+        <li><img src="images/3.jpg"></li>
+        <li><img src="images/4.jpg"></li>
+        <li><img src="images/5.jpg"></li>
+    </ul>
+
+    <div id="right"><img src="images/right.gif"></div>
+
+</div>
+
+
+
+<script src="../jquery/jquery1.7.js"></script>
+
+<script>
+
+    $(function(){
+
+        $("#nav ul li img").click(function(){
+
+            /*var imgsrc = this.css("src");*/
+
+            $("#small div img").attr("src",$(this).attr("src"));
+            $("#big img").attr("src",$(this).attr("src"));
+            $(this).addClass("border").parent().siblings().find("img").removeClass("border");
+        })
+
+        $("#small").mousemove(function(e){
+
+            var mwidth = e.pageX - $("#main").offset().left - $("#small b").width()/2;
+            var mheight = e.pageY - $("#main").offset().top - $("#small b").height()/2;
+
+            var maxwidth = $("#small").width() - $("#small b").width();
+            var maxheight = $("#small").height() - $("#small b").height();
+            /*console.log(mheight);*/
+
+            if( mwidth <= 0 ){
+
+                mwidth = 0;
+            }else if( mwidth > maxwidth){
+
+                mwidth = maxwidth;
+            }
+
+            if( mheight <= 0 ){
+
+                mheight = 0;
+            }else if( mheight > maxheight){
+
+                mheight = maxheight;
+            }
+
+
+            $("#small b").css("display","block");
+            $("#small b").css({
+                top:mheight,
+                left:mwidth
+            })
+
+            $("#big").css({
+                display:"block"
+            });
+
+            $("#big img").css({
+                top:-mheight*2,
+                 left:-mwidth*2
+            });
+        })
+    })
+
+</script>
+</body>
+</html>

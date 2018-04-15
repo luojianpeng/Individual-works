@@ -1,0 +1,90 @@
+*{margin:0;padding: 0}
+body{
+    background: #fff;
+    color:#000;
+}
+
+.herd{
+    width: 100%;
+    background: url("../img/chicago_large-min4-e3c48a2230b34485fb66c8aeff049924508af97c88daaf5145b10a1e2485a6db.jpg") no-repeat;
+    background-size:cover;
+    padding: 70px 100px;
+    color: #fff;
+}
+.herd span{
+    display: block;
+    background: #fff;
+    width: 100px;
+    height: 1px;
+    margin: 30px auto;
+}
+.herd p{
+    font-size: 16px;
+    line-height: 40px;
+}
+.herd a{
+    width: 150px;
+    line-height: 30px;
+    display: block;
+    margin: 50px auto;
+    font-size: 16px;
+    background: #32c5d2;
+}
+.us{
+    background: #32c5d2;
+    padding: 20px 0;
+    color: #fff;
+}
+.find{
+    padding: 50px 0;
+}
+.find span{
+    display: block;
+    background: black;
+    width: 100px;
+    height: 1px;
+    margin: 30px 0;
+}
+.find p{
+    line-height: 30px;
+}
+.find a{
+    width: 200px;
+    line-height: 30px;
+    display: block;
+    margin: 50px 0;
+    font-size: 16px;
+    background: #32c5d2;
+}
+.cl span{
+    display: block;
+    background: black;
+    width: 60px;
+    height: 1px;
+    margin: 30px auto;
+}
+.cl div{
+    padding: 20px;
+}
+.pa{
+    padding: 50px 50px;
+}
+.pa a{
+    width: 150px;
+    height: 40px;
+}
+
+.eee{
+    background: #eee;
+}
+
+.banner{
+    width: 100%;
+    background-color: #eee;
+}
+.banner .container{
+    padding: 0;
+}
+.swiper-slide img{
+    width: 100%;
+}

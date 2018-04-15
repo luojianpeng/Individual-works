@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            list-style: none;
+            float: left;
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: #33CCFF;
+        }
+        ol li{
+            list-style: none;
+        }
+        ul{
+            width: 304px;
+            margin: auto;
+        }
+
+        .lihide{
+            border-bottom: 1px solid #666666;
+        }
+        .lishow{
+            border: 1px solid #666666;
+            border-bottom: none;
+
+
+        }
+
+        .show{
+            display: block;
+            width: 300px;
+            height: 150px;
+            border: 1px solid #666666;
+            border-top: none;
+            margin:  auto;
+            background-color: #33CCFF;
+            float: left;
+        }
+        ol{
+            display: none;
+            margin: auto;
+        }
+        #tab{
+            width: 304px;
+            margin: 200px auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="tab">
+
+    <ul >
+        <li class="lishow">111</li>
+        <li class="lihide">222</li>
+        <li class="lihide">333</li>
+        <li class="lihide">444</li>
+        <li class="lihide">555</li>
+        <li class="lihide">666</li>
+    </ul>
+    <div>
+        <ol class="show" >
+            <li>1111111</li>
+            <li>1111111</li>
+            <li>1111111</li>
+        </ol>
+
+        <ol  >
+            <li>2222222</li>
+            <li>2222222</li>
+            <li>2222222</li>
+        </ol >
+
+        <ol  >
+            <li>3333333</li>
+            <li>3333333</li>
+            <li>3333333</li>
+        </ol>
+
+        <ol  >
+            <li>4444444</li>
+            <li>4444444</li>
+            <li>4444444</li>
+        </ol>
+
+        <ol  >
+            <li>5555555</li>
+            <li>5555555</li>
+            <li>5555555</li>
+        </ol>
+
+        <ol  >
+            <li>6666666</li>
+            <li>6666666</li>
+            <li>6666666</li>
+        </ol>
+    </div>
+</div>
+
+<script src="../jquery/jquery1.7.js"></script>
+<script>
+
+    $(function(){
+
+        $("#tab>ul>li").click(
+            function(){
+               $(this).addClass("lishow");
+                $(this).siblings().removeClass().addClass("lihide");
+
+                var index = $(this).index();
+                $("#tab div ol").eq(index).addClass("show").siblings().removeClass("show");
+            }
+        )
+
+    })
+
+</script>
+</body>
+</html>

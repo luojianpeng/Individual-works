@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function Arr() {
+        this.arr1 = [1,2,3,4,5]
+    }
+    /*var arr2 = [1,8,12,3];*/
+    /*var max = Math.max.apply(null,arr);*/
+    var a = new Arr();
+    var min = Math.max.apply(null,a.arr1);
+    console.log(min);
+    console.log(a.arr1);
+</script>
+</body>
+</html>

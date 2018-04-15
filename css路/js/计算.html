@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!DOCTYPE html>
+        <script type="text/javascript">
+            function count(){
+                var i=document.getElementById("txt1").value;
+                var j=document.getElementById("txt2").value;
+                var k=document.getElementById("select").value;
+                if(k=='+'){
+                    z=parseFloat(i)+parseFloat(j);
+                    return z;
+                }else if(k=='-'){
+                    z=parseFloat(i)-parseFloat(j);
+                    return z;
+                }else if(k=='*'){
+                    z=parseFloat(i)*parseFloat(j);
+                    return z;
+                }else{
+                    z=parseFloat(i)/parseFloat(j);
+                    return z;
+                }
+            }
+function cont(){
+    var str=count();
+    var oText=document.getElementById('fruit');
+    oText.value=str;
+}
+        </script>
+    </head>
+<body>
+<input type='text' id='txt1' />
+<select id='select'>
+    <option value='+'>+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+<input type='text' id='txt2' />
+<input type='button' value=' = ' onclick=cont() /> <!--通过 = 按钮来调用创建的函数，得到结果-->
+<input type='text' id='fruit' />
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+     ul li{
+        list-style: none;
+         background: #46fff4;
+    }
+     .tab1{
+         width: 200px;
+         height: 100px;
+         margin: 10px auto;
+     }
+    .tab1 ul li{
+        /*background: #44fff5;*/
+        width: 96px;
+        display: inline-block;
+        text-align: center;
+    }
+    .tab1 p {
+        border: 1px solid salmon;
+    }
+
+    .tab2{
+        width: 100px;
+        height: 200px;
+        border: 1px solid salmon;
+        word-break:break-all;
+        margin: 10px auto;
+    }
+    .tab2 ul li{
+        /*background: #ffed18;*/
+        width: 43px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+    }
+    .tab2 p {
+        width: 100px;
+        line-height: 20px;
+        word-break:break-all;
+    }
+    .bg{
+        background: red;
+    }
+</style>
+<body>
+
+<div class="tab1">
+    <ul>
+        <li>aaa</li>
+        <li>bbb</li>
+    </ul>
+    <div>
+        <p>aaaaaaaaaaaaaa</p>
+        <p style="display: none">bbbbbbbbbbbbbbbb</p>
+    </div>
+
+</div>
+
+<div class="tab2">
+    <ul>
+        <li>111</li>
+        <li>222</li>
+    </ul>
+    <div>
+        <p>111111111111111111111</p>
+        <p style="display: none">222222222222222222222</p>
+    </div>
+
+</div>
+
+<script src="../jquery/jquery1.7.js"></script>
+<script src="js/tab.js"></script>
+<script>
+
+    $(".tab1").tab({
+            bgColor:"#CCCCCC"
+    }
+    );
+    $(".tab2").tab({
+        tabEvent:"hover",
+        bid:'.tab2'
+    });
+</script>
+</body>
+</html>

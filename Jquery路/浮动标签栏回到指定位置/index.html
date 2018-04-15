@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul{
+            list-style: none;
+        }
+        #homepage ul li{
+            height: 500px;
+            border-top: 3px solid #666666;
+            text-align: center;
+            font-size: 30px;
+        }
+        #nav ul li{
+            line-height: 50px;
+            background-color: #33CCFF;
+        }
+        #nav{
+            width: 50px;
+            text-align: center;
+            height: 250px;
+            position: fixed;
+            right:100px;
+            bottom:200px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="homepage">
+        <ul>
+            <li style="background-color: orange">顶部</li>
+            <li style="background-color: lawngreen">图书</li>
+            <li style="background-color: bisque">手机</li>
+            <li style="background-color: pink">电脑</li>
+            <li style="background-color: #c0ff14">家具</li>
+        </ul>
+    </div>
+
+    <div id="nav">
+        <ul>
+            <li>顶部</li>
+            <li>图书</li>
+            <li>手机</li>
+            <li>电脑</li>
+            <li>家具</li>
+        </ul>
+    </div>
+
+
+<script src="../jquery/jquery1.7.js"></script>
+<script>
+
+    $(function(){
+
+        $("#nav ul li").click(
+
+            function(){
+
+                var ndx = $(this).index();
+                //alert(ndx);
+
+                if ( ndx == 0 ){
+
+                    $(document.body).animate({"scrollTop":0},1000);
+                    $(document.documentElement).animate({"scrollTop":0},1000);
+                }else if(ndx == 1 ){
+
+                    $(document.body).animate({"scrollTop":503},1000);
+                    $(document.documentElement).animate({"scrollTop":503},1000);
+                }else if(ndx == 2 ){
+
+                    $(document.body).animate({"scrollTop":1006},1000);
+                    $(document.documentElement).animate({"scrollTop":1006},1000);
+                }else if(ndx == 3 ){
+
+                    $(document.body).animate({"scrollTop":1509},1000);
+                    $(document.documentElement).animate({"scrollTop":1509},1000);
+                }else if(ndx == 4 ){
+
+                    $(document.body).animate({"scrollTop":2012},1000);
+                    $(document.documentElement).animate({"scrollTop":2012},1000);
+                }
+
+            }
+        )
+    })
+
+</script>
+</body>
+</html>
